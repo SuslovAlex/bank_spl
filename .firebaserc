@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bank-apl": {
+      "hosting": {
+        "bank_spl": [
+          "bank-apl"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bank-apl"
+  }
+}
