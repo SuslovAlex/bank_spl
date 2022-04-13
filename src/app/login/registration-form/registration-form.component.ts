@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-registration-form',
-  templateUrl: './registration-form.component.html',
-  styleUrls: ['./registration-form.component.scss']
+    selector: 'app-registration-form',
+    templateUrl: './registration-form.component.html',
+    styleUrls: ['./registration-form.component.scss']
 })
 export class RegistrationFormComponent implements OnInit {
 
-  constructor() { }
+    constructor() { }
 
-  ngOnInit(): void {
-  }
+    public ngOnInit(): void {
+        let fix: number = 0;
+        fix = 2;
+    }
 
 }

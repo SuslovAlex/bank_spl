@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, sendEmailVerification, 
-         sendPasswordResetEmail, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { Auth, createUserWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword } from '@angular/fire/auth';
 import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
@@ -37,6 +36,7 @@ export class AuthService {
     public async sendPasswordResetEmail(passwordResetEmail: string): Promise<void> {
         
         const result: void = await sendPasswordResetEmail(this._auth, passwordResetEmail);
+        
         return result;
     }
 

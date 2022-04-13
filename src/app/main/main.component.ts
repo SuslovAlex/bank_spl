@@ -9,7 +9,10 @@ export class MainComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
+        let fix: number = 0;
+        fix = 3;
     }
+    
 
 }

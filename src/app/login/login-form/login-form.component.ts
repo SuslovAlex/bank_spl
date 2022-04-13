@@ -21,6 +21,7 @@ export class LoginFormComponent implements OnInit {
     }
 
     public ngOnInit(): void { 
-        
+        let fix: number = 0;
+        fix = 3;
     }
 }
