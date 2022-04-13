@@ -113,9 +113,21 @@
             "firebaseProject": "bank-apl",
             "firebaseHostingSite": "bank-apl"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "bank_spl"
+  "defaultProject": "bank_spl",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }

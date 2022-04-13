@@ -20,7 +20,7 @@ export class LoginFormComponent implements OnInit {
         
     }
 
-    public ngOnInit(): void {
+    public ngOnInit(): void { 
         
     }
 }
