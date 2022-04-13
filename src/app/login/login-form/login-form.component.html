@@ -1,0 +1,22 @@
+<form> 
+    <table> 
+        <tr> 
+            <td> Логин: </td> 
+            <td> 
+                <input type=”text” placeholder=Email email=””> 
+            </td> 
+        </tr> 
+        <tr> 
+            <td> Пароль: </td> 
+            <td> <input type=”Password” placeholder=Пароль name=””> 
+            </td> 
+        </tr>
+        <tr >
+            <button [routerLink]="['']">Залогиниться</button>
+        </tr>
+        <tr>
+            <a>Ещё нет аккаунта?</a>
+            <a [routerLink]="['/authorization/registration']"> Зарегистрируйтесь</a>
+        </tr>
+    </table> 
+</form> 

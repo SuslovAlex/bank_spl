@@ -8,14 +8,19 @@ import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MainComponent } from './main/main.component';
+import { LoginModule } from './login/login.module';
 
 @NgModule({
     declarations: [
         AppComponent,
+        MainComponent,
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
+        ReactiveFormsModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
         provideDatabase(() => getDatabase()),
@@ -25,7 +30,5 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     bootstrap: [AppComponent],
 })
 
-/**
- * Adds two numbers together.
- */
+
 export class AppModule {}
