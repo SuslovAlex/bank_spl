@@ -11,6 +11,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
 import { LoginModule } from './login/login.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { LoginModule } from './login/login.module';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
+        FormsModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideAuth(() => getAuth()),
         provideDatabase(() => getDatabase()),

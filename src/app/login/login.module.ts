@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { loginRouting } from './login-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -18,6 +18,7 @@ import { ReactiveFormsModule } from '@angular/forms';
         CommonModule,
         loginRouting,
         ReactiveFormsModule,
+        FormsModule
     ],
     exports: [LoginFormComponent],
 })

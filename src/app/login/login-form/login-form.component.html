@@ -1,22 +1,30 @@
-<form> 
-    <table> 
-        <tr> 
-            <td> Логин: </td> 
-            <td> 
-                <input type=”text” placeholder=Email email=””> 
-            </td> 
-        </tr> 
-        <tr> 
-            <td> Пароль: </td> 
-            <td> <input type=”Password” placeholder=Пароль name=””> 
-            </td> 
-        </tr>
-        <tr >
-            <button [routerLink]="['']">Залогиниться</button>
-        </tr>
-        <tr>
-            <a>Ещё нет аккаунта?</a>
-            <a [routerLink]="['/authorization/registration']"> Зарегистрируйтесь</a>
-        </tr>
-    </table> 
-</form> 
+<div class="box">
+    <div class="signInForm">
+        <form class="formStyle, form" [formGroup] ="authorizationForm">
+            <h1 class="title">
+                <img src="/assets/imageResoursec/rocket.png" alt="LogoBank">
+                КОСМОБАНК
+            </h1>
+            <div class="inputStyleContainer">
+                <input if = "Email" type="email" class="inputStyle" [formControlName] = "'userEmail'" placeholder=" ">
+                <label for = "Email" class="labelStyle">Почта</label> 
+                <!--<div *ngIf="authorizationForm.controls['userEmail'].invalid">Обязательно для заполненения</div>-->
+            </div>
+            <div class="inputStyleContainer">
+                <input if = "password" type="password" class="inputStyle" [formControlName] = "'userPassword'" placeholder=" ">
+                <label for = "password" class="labelStyle">Пароль</label>
+                <!--<div *ngIf="authorizationForm.controls['userPassword'].invalid">Обязательно для заполненения</div>-->
+            </div>
+            
+
+            <div>
+                <input type="submit" class="submitBtn" [disabled]="authorizationForm.invalid || isSubmitDisabled" (click)="onSubmit()" value="Войти" >
+            </div>
+            <a class="registrationStyle" href="http://localhost:4200/authorization/registration">
+                <div>
+                    Зарегистрироваться
+                </div>    
+            </a>
+        </form>
+    </div>
+</div>

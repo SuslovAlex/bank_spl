@@ -13,6 +13,5 @@ export class MainComponent implements OnInit {
         let fix: number = 0;
         fix = 3;
     }
-    
 
 }

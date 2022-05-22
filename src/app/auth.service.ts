@@ -4,6 +4,7 @@ import { Firestore } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { User } from 'firebase/auth';
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -13,38 +14,37 @@ export class AuthService {
 
     constructor(
       public router: Router,
-      private _auth: Auth,
-      private _firestore: Firestore,
+      private _authServ: Auth,
     ) { 
-        this._auth.onAuthStateChanged((user: User | null): void => {
+        this._authServ.onAuthStateChanged((user: User | null): void => {
             this.user = user;
         });
     }
 
     public async login(email: string, password: string): Promise<void> {
-        await signInWithEmailAndPassword(this._auth, email, password);
+        await signInWithEmailAndPassword(this._authServ, email, password);
     }
 
     public async register(email: string, password: string): Promise<void> {
-        await createUserWithEmailAndPassword(this._auth, email, password);
+        await createUserWithEmailAndPassword(this._authServ, email, password);
     }
 
     public async sendEmailVerification(): Promise<void> {
-        return await sendEmailVerification(this._auth.currentUser!);
+        return await sendEmailVerification(this._authServ.currentUser!);
     }
 
     public async sendPasswordResetEmail(passwordResetEmail: string): Promise<void> {
         
-        const result: void = await sendPasswordResetEmail(this._auth, passwordResetEmail);
+        const result: void = await sendPasswordResetEmail(this._authServ, passwordResetEmail);
         
         return result;
     }
 
     public async logout(): Promise<void> {
-        await this._auth.signOut();
+        await this._authServ.signOut();
     }
 
     public get isLoggedIn(): boolean { 
-        return this._auth.currentUser !== null;
+        return this._authServ.currentUser !== null;
     }
 }

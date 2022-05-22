@@ -1,20 +1,31 @@
-<div class="form">
-    <div class="title">Добро пожаловать</div>
-    <div class="subtitle">Давайте создадим аккаунт</div>
-    <div class="input-container ic1">
-      <input id="firstname" class="input" type="text" placeholder=" " />
-      <div class="cut"></div>
-      <label for="firstname" class="placeholder">Email</label>
+<div class="box">   
+    <div class="signInForm">
+        <div class="login-slider__img">
+            <form class="formStyle, form" [formGroup] ="registrationForm" (submit)="signUpMethod()">
+                <h1 class="title">Регистрация</h1>
+                <div class="inputStyleContainer">
+                    <input if = "Email" type="email" class="inputStyle" [formControlName] = "'userEmail'" placeholder=" ">
+                    <label for = "Email" class="labelStyle">Почта</label> 
+                    <!--<div *ngIf="registrationForm.controls['userEmail'].invalid">Обязательно для заполненения</div>-->
+                </div>
+                <div class="inputStyleContainer">
+                    <input if = "password" type="password" class="inputStyle" [formControlName] = "'userPassword'" placeholder=" ">
+                    <label for = "password" class="labelStyle">Пароль</label>
+                    <!--<div *ngIf="registrationForm.controls['userPassword'].invalid">Обязательно для заполненения</div>-->
+                </div>
+                <div class="inputStyleContainer">
+                    <input if = "repeatPassword" type="password" class="inputStyle" [formControlName] = "'userRepeatPassword'" placeholder=" ">
+                    <label for = "password" class="labelStyle">Подтвердить Пароль</label>
+                    <!--<div *ngIf="registrationForm.controls['userPassword'].invalid">Обязательно для заполненения</div>-->
+                </div>
+
+                <div>
+                    <input type="submit" class="submitBtn" [disabled]="registrationForm.invalid" (click)="onSubmit()" value="Подтвердить">
+                </div>
+                <a class="registrationStyle" href="http://localhost:4200/authorization/login">
+                    <div>Авторизация</div>    
+                </a>
+            </form>
+        </div>
     </div>
-    <div class="input-container ic2">
-      <input id="lastname" class="input" type="text" placeholder=" " />
-      <div class="cut"></div>
-      <label for="lastname" class="placeholder">Пароль</label>
-    </div>
-    <div class="input-container ic2">
-        <input id="lastname" class="input" type="text" placeholder=" " />
-        <div class="cut"></div>
-        <label for="lastname" class="placeholder">Подтвердить Пароль</label>
-      </div>
-    <button type="text" class="submit" [routerLink]="['']">Подтвердить</button>
 </div>

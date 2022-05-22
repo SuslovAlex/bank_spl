@@ -1,115 +1,133 @@
-.form {
-    background-color: #15172b;
-    border-radius: 20px;
+.box{
+    background-image: url(https://i.7fon.org/1000/c135661.jpg); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.formStyle {
     box-sizing: border-box;
-    height: 500px;
-    padding: 20px;
-    width: 320px;
-  }
+    margin: 0;
+    padding: 0;
+    background-color: white;
+}
+
+.signInForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.form {
+    background-color: white;
+    width: 400px;
+    border-radius: 8px;
+    padding: 20px 40px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
   
 .title {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 36px;
-    font-weight: 600;
-    margin-top: 30px;
-  }
-  
-.subtitle {
-    color: #eee;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 10px;
-  }
-  
-.input-container {
-    height: 50px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+    margin-bottom: 50px;
+}
+
+.inputStyleContainer {
     position: relative;
-    width: 100%;
-  }
-  
-.ic1 {
-    margin-top: 40px;
-  }
-  
-.ic2 {
-    margin-top: 30px;
-  }
-  
-.input {
-    background-color: #303245;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
-    font-size: 18px;
+    height: 45px;
+    width: 90%;
+    margin-bottom: 17px;
+}
+
+.inputStyle {
+    position: absolute;
+    top: 0px;
+    left: 0px;
     height: 100%;
-    outline: 0;
-    padding: 4px 20px 0;
     width: 100%;
-  }
-  
-.cut {
-    background-color: #15172b;
-    border-radius: 10px;
-    height: 20px;
-    left: 20px;
+    border: 1px solid #DADCE0;
+    border-radius: 7px;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    background: none;
+    z-index: 1;
+}
+
+.labelStyle {
     position: absolute;
-    top: -20px;
-    transform: translateY(0);
-    transition: transform 200ms;
-    width: 76px;
-  }
-  
-.cut-short {
-    width: 50px;
-  }
-  
-.input:focus ~ .cut,
-.input:not(:placeholder-shown) ~ .cut {
-    transform: translateY(8px);
-  }
-  
-.placeholder {
-    color: #65657b;
-    font-family: sans-serif;
-    left: 20px;
-    line-height: 14px;
-    pointer-events: none;
-    position: absolute;
-    transform-origin: 0 50%;
-    transition: transform 200ms, color 200ms;
-    top: 20px;
-  }
-  
-.input:focus ~ .placeholder,
-.input:not(:placeholder-shown) ~ .placeholder {
-    transform: translateY(-30px) translateX(10px) scale(0.75);
-  }
-  
-.input:not(:placeholder-shown) ~ .placeholder {
-    color: #808097;
-  }
-  
-.input:focus ~ .placeholder {
-    color: #dc2f55;
-  }
-  
-.submit {
-    background-color: #08d;
-    border-radius: 12px;
-    border: 0;
-    box-sizing: border-box;
-    color: #eee;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: white;
+  color: #DADCE0;
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+
+::placeholder {
+    color: transparent;
+}
+
+input.ng-touched.ng-invalid {
+    border: solid red 2px;
+}
+input.ng-touched.ng-valid {
+    border: solid rgb(128, 0, 79) 2px;
+}
+
+.submitBtn {
+    display: block;
+    margin-left: auto;
+    padding: 15px 145px;
+    border: none;
+    background-color: #7A5DC7;
+    color: white;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 18px;
-    height: 50px;
-    margin-top: 38px;
-    text-align: center;
-    width: 100%;
-  }
+    font-size: 16px;
+    margin-top: 30px;
+    text-transform: uppercase;
+}
   
-.submit:active {
-    background-color: #06b;
-  }
+  .submitBtn:hover {
+    background-color: #a578cf;
+    transform: translateY(-2px);
+}
+
+.inputStyle:focus + .labelStyle {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+    color: purple;
+}
+
+.inputStyle:focus {
+    border: 2px solid purple;
+}
+
+.inputStyle:not(:placeholder-shown) + .labelStyle {
+    top: -7px;
+    left: 3px;
+    z-index: 10;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.registrationStyle{
+    display: flex;
+    margin-top: 15px;
+    text-align: left;
+    color: rgb(29, 62, 209);
+    font-size: 130%;
+}
+
+.registrationStyle:focus{
+    color: green;
+}
