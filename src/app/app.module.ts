@@ -10,8 +10,10 @@ import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './main/main.component';
-import { LoginModule } from './login/login.module';
 import { FormsModule } from '@angular/forms';
+import { FirebaseUserService } from 'src/services/firebase-user/firebase-user.service';
+import { FirebaseCardService } from 'src/services/firebase-card/firebase-card.service';
+import { AuthService } from 'src/services/auth/auth.service';
 
 @NgModule({
     declarations: [
@@ -28,7 +30,11 @@ import { FormsModule } from '@angular/forms';
         provideDatabase(() => getDatabase()),
         provideFirestore(() => getFirestore()),
     ],
-    providers: [],
+    providers: [
+        FirebaseUserService,
+        FirebaseCardService,
+        AuthService,
+    ],
     bootstrap: [AppComponent],
 })
 

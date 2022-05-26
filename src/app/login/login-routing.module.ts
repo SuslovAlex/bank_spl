@@ -5,6 +5,9 @@ import { RegistrationFormComponent } from './registration-form/registration-form
 
 
 const routes: Routes = [
+    {
+        path: '', redirectTo: 'login'
+    },
     { 
         path: 'login', pathMatch: 'full', component: LoginFormComponent 
     },

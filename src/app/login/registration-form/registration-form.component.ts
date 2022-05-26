@@ -3,14 +3,14 @@ import { UserRegistration } from '../module/userRegistration';
 import { FormControl,FormGroup, Validators } from '@angular/forms';
 import { Auth } from '@angular/fire/auth';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/services/auth/auth.service';
 
 @Component({
     selector: 'app-registration-form',
     templateUrl: './registration-form.component.html',
     styleUrls: ['./registration-form.component.scss']
 })
-export class RegistrationFormComponent implements OnInit {
+export class RegistrationFormComponent {
     public users: UserRegistration[]=[];
     public isSubmitDisabled: boolean = false;
     public registrationForm: FormGroup = new FormGroup({
@@ -25,11 +25,6 @@ export class RegistrationFormComponent implements OnInit {
         private _router: Router,) {
     }
 
-    public ngOnInit(): void {
-        let fix: number = 0;
-        fix = 2;
-    }
-
     public onSubmit(): void {
         
     }
@@ -41,8 +36,10 @@ export class RegistrationFormComponent implements OnInit {
         this._authServ.register(email, password).then(() => {
             this.switchSubmit();
             this._authServ.sendEmailVerification();
-            this._router.navigate(['/']);
+            this._router.navigate(['/cat-profile']);
+            console.log('success'); //log
         }).catch((error: Error): void => {
+            console.error(error); //err log
         });
     }
 
