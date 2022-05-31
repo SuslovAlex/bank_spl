@@ -14,10 +14,13 @@ export class AuthService {
     constructor(
       public router: Router,
       private _authServ: Auth,
-      private _firebaseUser: FirebaseUserService
+      private _firebaseUser: FirebaseUserService,
     ) { 
         this._authServ.onAuthStateChanged((user: User | null): void => {
             this.user = user;
+            if (user) {
+                this._firebaseUser.initUser(user.uid);
+            }
         });
     }
 
@@ -44,6 +47,7 @@ export class AuthService {
     public async logout(): Promise<void> {
         await this._authServ.signOut();
         this.router.navigate(['']);
+        this._firebaseUser.logout();
     }
 
     public get isLoggedIn(): boolean { 

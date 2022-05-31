@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="card" *ngFor="let card of cards">
+        <div class="cardIcon">
+            <span class="cardImg">
+                <img src="https://cdn-icons-png.flaticon.com/512/147/147258.png" alt="cardIcon">
+            </span>       
+        </div>
+        <div class="cardInfo">
+            <span class="card__info-top-bar">
+                <span class="card__info__date">{{card.number}}</span>
+                <span class="card__info__name">{{ card.name }} </span>
+                <span class="card__info__balance">{{ card.balance }} ₽</span>
+            </span>
+        </div>
+    </div>
+</div>
+<div class="fast-send">
+    <div class="send">
+        <h2>Перевод на чужую карту</h2>
+    </div>
+    <div class="send">
+        <form [formGroup]="transForm" (submit)="sendMoney()">
+            <div class="form-row__label__input">
+                <label>Перевести с:</label>
+                <input type="text" id="cardNumber" formControlName="cardNumberFrom" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="form-row__label__input">
+                <label>Перевести на:</label>
+                <input type="text" id="cardNumber" formControlName="cardNumberTo" placeholder="0000 0000 0000 0000">
+            </div>
+            <div class="form-row__label__input">
+                <label>Сумма перевода:</label>
+                <input type="number" id="cardBalance" formControlName="cardBalance" placeholder="0000">
+            </div>
+            <div class="form__submit">
+                <input type="submit" value="Перевести">
+            </div>
+        </form>
+    </div>
+</div>
+    

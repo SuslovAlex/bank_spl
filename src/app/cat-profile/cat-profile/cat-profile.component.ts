@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FirebaseUserService } from 'src/services/firebase-user/firebase-user.service';
 
 @Component({
     selector: 'app-cat-profile',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CatProfileComponent implements OnInit {
 
-    constructor() { }
+    constructor(
+        public fu: FirebaseUserService,
+    ) { }
 
     public ngOnInit(): void {
     }

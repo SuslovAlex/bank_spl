@@ -1,2 +1,4 @@
-<app-side-bar></app-side-bar>
-<router-outlet>
+<div class="wrapper">
+    <app-side-bar></app-side-bar>
+    <router-outlet *ngIf="this.fu.isLoaded"></router-outlet>
+</div>
