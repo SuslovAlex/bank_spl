@@ -33,12 +33,10 @@ export class CatProfileCardsComponent implements OnInit {
     }
     
     public sendMoney(): void {
-        this.sendMoney();
         const cardFrom: string = this.transForm.controls['cardNumberFrom'].value;
         const cardTo: string = this.transForm.controls['cardNumberTo'].value;
         const amount: number = this.transForm.controls['cardBalance'].value;
         this.fc.sendMoney(cardFrom,cardTo,amount).then(() => {
-            this.sendMoney();
             console.log('success');
         }).catch((error: Error) => {
             console.error(error);
